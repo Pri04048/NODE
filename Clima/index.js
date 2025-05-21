@@ -13,7 +13,7 @@ app.get("/api/clima" , async(requisicao, resposta)=>{
     const chaveAPI = process.env.OPENWEATHER_API_KEY 
 
     try{
-        const respostaAPI = await axios.get(`hhttps://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chaveAPI}&units=metric&lang=pt_br`)
+        const respostaAPI = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chaveAPI}&units=metric&lang=pt_br`)
         resposta.json(respostaAPI.data)
     }
     catch{ 
@@ -22,5 +22,5 @@ app.get("/api/clima" , async(requisicao, resposta)=>{
     }
 })
 app.listen(porta, () => {
-    console.log(`Servidor Rodando em http://localhost:${porta}`)
+    console.log(`Servidor Rodando em https://localhost:${porta}`)
 })
